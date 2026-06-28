@@ -1,0 +1,54 @@
+use catui // 模块/库使用
+
+fun main() { // 默认返回None
+    println("hello world")  // 函数调用
+    val a = 5 // 定义不可变变量
+    var b: String = "hello" // 定义类型， 可变变量
+
+    for i in 0..10 { // 0..10是语法糖
+        println(i.toString()) // 转换成String 并打印
+        if i % 2 == 0 {
+            println("even")
+        } else {
+            println("odd")
+        }
+    }
+
+    val Cat = Cat(5, "Tom") // 创建结构体
+    @sys.io.print ("1") // 可用配置文件定义汇编抽象符， 标准库自带部分系统相关的
+
+    // 该语言支持goto语法， goto会跳转到label, label可用lbl 名字 定义
+} // 生命周期， a, b自动释放
+
+ext Animal { // 协议
+    fun eat(&self)
+    fun sleep(&self)
+}
+
+typ Cat(age: I32, name: String) { // 自动生成init
+    fun printInfo() {
+        println("age: ${}, name: ${}", self.age, self.name)
+    }
+}
+
+imp Animal for Cat { // 实现协议
+    fun eat(&self) {
+        println("cat: ${} is eating", self.name)
+    }
+
+    fun sleep(&self) {
+        println("cat: ${} is sleeping", self.name)
+    }
+}
+
+enm Gender { // 枚举
+    Male,
+    Female,
+    Femboy
+}
+
+imp Gender { // 实现枚举
+    fun printInfo(&self) {
+        println("gender: ${self}")
+    }
+}
